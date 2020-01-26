@@ -1,5 +1,7 @@
 package com.example.messagedialect.controller;
 
+import com.example.messagedialect.service.MessageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
+    @Autowired MessageService messageService;
 
     @RequestMapping(value={"","/home"})
     public String index (){
+        messageService.printMessage();
         return "index";
     }
 }

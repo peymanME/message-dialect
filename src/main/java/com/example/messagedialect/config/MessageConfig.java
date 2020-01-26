@@ -18,7 +18,7 @@ import java.util.Locale;
  * @project : message-dialect
  */
 @Configuration
-public class messageConfig implements WebMvcConfigurer {
+public class MessageConfig implements WebMvcConfigurer {
 
     // Create MessageSource bean
     @Bean
@@ -38,7 +38,7 @@ public class messageConfig implements WebMvcConfigurer {
         return slr;
     }
 
-    //To add an interceptor bean that will switch to a new locale based on the value of the lang parameter appended to a request
+    // To add an interceptor bean that will switch to a new locale based on the value of the lang parameter appended to a request
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
