@@ -5,6 +5,8 @@ import com.example.messagedialect.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Locale;
+
 /*
  * @author : Peyman Ekhtiar
  * @date : 1/26/2020
@@ -17,9 +19,9 @@ public class MessageServiceImpl implements MessageService {
 
 
     @Override
-    public void printMessage() {
-        System.out.println("Example message in service side: " + messageComponent.get("title"));
-        System.out.println("Language is : " + messageComponent.get("replacer.city"));
+    public void printMessage(Locale locale) {
+        System.out.println("Example message in service side: " + messageComponent.get("title", locale));
+        System.out.println("Language is : " + messageComponent.get("replacer.city",locale));
 
     }
 }

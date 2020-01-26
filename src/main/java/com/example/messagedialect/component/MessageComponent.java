@@ -26,7 +26,7 @@ public class MessageComponent {
         accessor = new MessageSourceAccessor(messageSource, LocaleContextHolder.getLocale());
     }
 
-    public String get(String code) {
-        return accessor.getMessage(code);
+    public String get(String code, Locale locale) {
+        return accessor.getMessage(code, locale);
     }
 }
