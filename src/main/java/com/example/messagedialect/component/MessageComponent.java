@@ -29,4 +29,9 @@ public class MessageComponent {
     public String get(String code, Locale locale) {
         return accessor.getMessage(code, locale);
     }
+    
+    public String get(String code, Object[] args, Locale locale) {
+        return accessor.getMessage(code, args, locale);
+    }
+
 }
