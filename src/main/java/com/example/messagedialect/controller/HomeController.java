@@ -22,8 +22,7 @@ public class HomeController {
     @Autowired LocaleResolver localeResolver;
 
     @RequestMapping(value={"","/home"})
-    public String index (HttpServletRequest request){
-        Locale locale = localeResolver.resolveLocale(request);
+    public String index (Locale locale){
         messageService.printMessage( locale);
         return "index";
     }
