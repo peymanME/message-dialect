@@ -19,11 +19,25 @@ import java.util.Locale;
 public class HomeController {
 
     @Autowired MessageService messageService;
-    @Autowired LocaleResolver localeResolver;
 
     @RequestMapping(value={"","/home"})
     public String index (Locale locale){
         messageService.printMessage( locale);
         return "index";
     }
+/*
+    private MessageService messageService;
+
+    public HomeController(MessageService messageService){
+        this.messageService = messageService;
+    }
+
+    @RequestMapping(value={"","/home"})
+    public String index (Locale locale){
+        messageService.printMessage( locale);
+        return "index";
+    }
+*/
+
+
 }
